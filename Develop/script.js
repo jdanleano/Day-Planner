@@ -1,11 +1,13 @@
+// This is to display the current time in the jumbotron
 moment(Date);
 $('#currentDay').text(moment().format('dddd MMMM Do YYYY, h:mm a'));
 
+// The below variables will be used to adjust the current time from moment to the given times in the planner
 var currentTime = moment();
 currentTime = currentTime.startOf('hour');
 var beforeTime = moment().startOf('day').add(9, 'hours');
 
-// Timeblock Time Displays
+// These variables are to display the time in the timeblocks
 var time1 = beforeTime.add(0, 'h');
 time1 = time1.format('hh:mm A');
 $('.block1').text(time1);
@@ -42,6 +44,7 @@ var time9 = beforeTime.add(1, 'h');
 time9 = time9.format('hh:mm A');
 $('.block9').text(time9);
 
+//This function is to change the colors of the timeblocks based on the current times
 function timeColors() {
     time1 = moment().startOf('day').add(9, 'hours');
     currentTime = currentTime.startOf('hour');
@@ -153,13 +156,16 @@ function timeColors() {
 }
 timeColors();
 
+// This variable is used to pull the information from localStorage
 var x = [9, 10, 11, 12, 1, 2, 3, 4, 5];
 
+// This is the for loop that wil scan localStorage for the corrisponding time
 for (var i = 0; i < x.length; i++) {
     var dataHour = localStorage.getItem(x[i]);
     $('.form' + x[i]).val(dataHour);
 }
 
+// This is the click event to save the input to localStorage
 $('.saveBtn').click(function () {
     event.preventDefault();
     var formValue = $(this).siblings('.form-control').val();

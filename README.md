@@ -2,7 +2,7 @@
 
 ## Mock Up
 
-![This is a screenshot of my planner](./Assets/screenshot.jpg)
+![This is a screenshot of my planner](./Assets/screenshot.JPG)
 
 This is my completed code for the Module 05 challenge this week. We were given a task this week to make a calendar application that allows the user to save events for each working hour of the day using HTML and CSS powered by jQuery.
 
